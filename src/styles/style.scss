@@ -1,0 +1,206 @@
+body {
+  background: white;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.image {
+  height: inherit;
+  object-fit: contain;
+}
+
+.app__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 900px;
+  font-family: "Source Code Pro", monospace;
+}
+
+.app__title {
+  flex-basis: 100%;
+}
+
+.app__item {
+  flex-basis: 49%;
+  min-height: 270px;
+}
+
+.paycard {
+  position: relative;
+  transition: transform 0.6s cubic-bezier(0.71, 0.03, 0.56, 0.85);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.paycard.flip {
+  transform: rotateY(180deg);
+}
+
+.paycard__face {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  background-image: url(/src/assets/images/5.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  box-shadow: 0 20px 60px 0 rgb(14 42 90 / 55%);
+}
+
+.paycard__face-front {
+  backface-visibility: hidden;
+}
+
+.paycard__face-back {
+  backface-visibility: hidden;
+  transform: rotateY(180deg); /* Поворачиваем текст */
+}
+
+.paycard__wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px 15px;
+  height: 100%;
+  color: #fff;
+  text-shadow: 7px 6px 10px rgb(14 42 90 / 80%);
+  user-select: none;
+}
+
+.paycard__top {
+  display: flex;
+  justify-content: space-between;
+  height: 45px;
+}
+
+.descr {
+  opacity: 0.7;
+}
+
+.paycard__type {
+  height: inherit;
+}
+
+.paycard__number {
+  font-size: 32px;
+  line-height: 1;
+  text-align: start;
+}
+
+.paycard__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.paycard__band {
+  margin-top: 30px;
+  height: 50px;
+  background-color: #000;
+}
+
+.paycard__cvv {
+  text-align: right;
+}
+
+.cvv-band {
+  display: flex;
+  height: 45px;
+}
+
+.cvv-band__item {
+  padding: 5px;
+  height: inherit;
+}
+
+.cvv-band__signature {
+  flex-basis: 80%;
+  background-color: #fff;
+}
+
+.cvv-band__code {
+  flex-basis: 20%;
+  font-size: 24px;
+  color: #333;
+  background-color: #D8D2DB;
+}
+
+.cvv-band__signature {
+  position: relative;
+}
+
+.cvv-band__signature::before,
+.cvv-band__signature::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #D8D2DB;
+}
+
+.cvv-band__signature::before {
+  top: 25%;
+}
+
+.cvv-band__signature::after {
+  top: 65%;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 25px 15px;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+.form__label {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form__label-half {
+  width: 48%;
+}
+
+.form__label-large {
+  width: 73%;
+}
+
+.form-check {
+  display: inline-block;
+}
+
+.btn {
+  align-self: flex-end;
+  height: 40px;
+}
+
+.logo {
+  position: absolute;
+  right: 35px;
+  bottom: 5px;
+  height: 32px;
+  width: 50px;
+  border-radius: 5px;
+  background-color: #fff;
+  object-fit: contain;
+  overflow: hidden;
+}
